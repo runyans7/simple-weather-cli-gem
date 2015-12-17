@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+# Loads environment
+require_relative '../config/environment'
+
+# Starts program
+SimpleWeather.new
