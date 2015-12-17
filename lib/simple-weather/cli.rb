@@ -1,7 +1,6 @@
 class SimpleWeather
 
   def initialize
-    @user_city = nil
     @weather_data = nil
     start
   end
@@ -30,8 +29,6 @@ class SimpleWeather
       puts "Invalid Entry. Please try again."
     end
 
-    @weather_data = get_weather_data(@user_city)
-
     if user_choice == "1"
       display_current_weather
     else
@@ -44,7 +41,8 @@ class SimpleWeather
     app_header
     puts "Which city would you like to get the weather for?"
 
-    @user_city = gets.chomp
+    user_city = gets.chomp
+    get_weather_data(user_city)
   end
 
   def get_weather_data(city)
